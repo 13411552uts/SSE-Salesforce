@@ -1,0 +1,54 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <lightning-card>
+    <template if:true={actionButtons}>
+      <template
+        for:each={actionButtons}
+        for:item="actionButton"
+        for:index="index"
+      >
+        <lightning-button
+          key={actionButton.label}
+          label={actionButton.label}
+          title={actionButton.label}
+          variant={actionButton.variant}
+          onclick={handleButtonAction}
+          data-name={actionButton.name}
+          class="slds-m-left_x-small"
+          slot="actions"
+        >
+        </lightning-button>
+      </template>
+    </template>
+    <template if:true={data}>
+      <lightning-datatable
+        key-field="Id"
+        data={data}
+        columns={columns}
+        onsave={saveHandler}
+        draft-values={fieldItemValues}
+        default-sort-direction={defaultSortDirection}
+        sorted-direction={sortDirection}
+        sorted-by={sortedBy}
+        onsort={onHandleSort}
+        onrowaction={handleRowAction}
+        hide-checkbox-column
+        show-row-number-column
+      >
+      </lightning-datatable>
+    </template>
+    <template if:true={isAddOpen}>
+      <c-student-page-form
+        mode="add"
+        onclosemodal={closeAdd}
+      ></c-student-page-form>
+    </template>
+    <template if:true={isDetailOpen}>
+      <c-student-page-form
+        mode="edit"
+        student-id={recordId}
+        onclosemodal={closeRowDetails}
+      ></c-student-page-form>
+    </template>
+  </lightning-card>
+</template>

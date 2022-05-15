@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <booleanFilter>1</booleanFilter>
+    <columns>NAME</columns>
+    <columns>Description__c</columns>
+    <columns>Faculty__c</columns>
+    <columns>Coordinator__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Coordinator__c</field>
+        <operation>equals</operation>
+    </filters>
+    <label>All</label>
+</ListView>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Description_Length</fullName>
+    <active>true</active>
+    <errorConditionFormula>IF ( 
+ NOT(ISBLANK(Description__c)), 
+ LEN(Description__c) &lt;  10, false 
+)</errorConditionFormula>
+    <errorDisplayField>Description__c</errorDisplayField>
+    <errorMessage>Description length must be greater than 10</errorMessage>
+</ValidationRule>

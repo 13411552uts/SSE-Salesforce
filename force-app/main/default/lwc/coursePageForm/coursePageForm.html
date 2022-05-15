@@ -1,0 +1,42 @@
+<!-- sldsValidatorIgnore -->
+<template>
+  <section
+    role="dialog"
+    tabindex="-1"
+    aria-labelledby="modal-heading-01"
+    aria-modal="true"
+    class="slds-modal slds-fade-in-open"
+  >
+    <div class="slds-modal__container">
+      <div class="slds-modal__header modal-header">
+        <div></div>
+        <h1 id="modal-heading-01" class="slds-modal__title slds-hyphenate">
+          {title}
+        </h1>
+        <button
+          class="slds-button slds-button_icon slds-button_icon-inverse"
+          onclick={closeModal}
+        >
+          <lightning-icon
+            icon-name="utility:close"
+            alternative-text="Close"
+            title="Close"
+          ></lightning-icon>
+          <span class="slds-assistive-text">Close</span>
+        </button>
+      </div>
+      <div
+        class="slds-modal__content slds-p-around_medium"
+        id="modal-content-id-1"
+      >
+        <lightning-record-form
+          object-api-name="Course__c"
+          fields={fields}
+          record-id={courseId}
+        >
+        </lightning-record-form>
+      </div>
+    </div>
+  </section>
+  <div class="slds-backdrop slds-backdrop_open" role="presentation"></div>
+</template>
